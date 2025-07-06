@@ -163,7 +163,7 @@
                 </div>
 
                 <div class="contact">
-                <form action="https://formspree.io/f/mrbkadbg" method="POST">
+                <form action="https://formspree.io/f/mrbkadbg" method="POST" id="contact-form" >
                     <input class="input" type="text" name="name" placeholder="Your Name" required>
                     <input class="input" type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" placeholder="Your Message" required></textarea>
@@ -187,6 +187,15 @@
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
+
+
+      const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function () {
+    setTimeout(() => {
+      form.reset(); 
+    }, 100);
+    });
   </script>
     </body>
 </html>
