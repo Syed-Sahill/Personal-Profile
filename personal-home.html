@@ -5,14 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://us-assets.i.posthog.com"> -->
 
-        <meta name="description" content="">
+        <meta name="description" content="This is my Personal Profile.">
         <meta name="keywords" content="Personal Profile">        
         <meta name="robots" content="index , follow">
 
-        <link rel="stylesheet" href="personal-profile.css">
+        <link rel="stylesheet" href="PERSONAL-PROFILE.CSS">
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+        <link rel="preload" as="image" href="task-images/my-pic.webp">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
         integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" 
         crossorigin="anonymous"referrerpolicy="no-referrer" />
@@ -31,23 +34,23 @@
             <div class="navbar">
                 <ul>
                     <li class="nav-item">
-                        <a href="personal-home.html">Home</a>
+                        <a href="PERSONAL-HOME.HTML">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="personal-about.html">About</a>
+                        <a href="PERSONAL.ABOUT.HTML">About</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="personal-skill.html">Skill</a>
+                        <a href="PERSONAL.SKILL.HTML">Skill</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="personal-projects.html">Project</a>
+                        <a href="PERSONAL.PROJECTS.HTML">Project</a>
                     </li>
                     
                     <li class="nav-item">
-                        <a href="personal-contact.html">Contact</a>
+                        <a href="PERSONAL.CONTACT.HTML">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -119,20 +122,20 @@
             <div class="section-project" data-aos="fade-right">
                 <div class="main-container">
                     <div class="section-common-heading">
-                        <h3>Project</h3>
+                        <h3>Projects</h3>
                     </div>
 
                     <div class="section-links grid grid-two--cols">
 
                     <div class="section-link-left">
                         <div class="link1">
-                        <h4>Project : 1</h4>
+                        <h4>Project : Weather Website</h4>
                         <a href="https://syed-sahill.github.io/Weather-Website/">
                             https://syed-sahill.github.io/Weather-Website/</a>
                         </div>
 
                         <div class="link1">
-                        <h4>Project : 3</h4>
+                        <h4>Project : Stop Watch</h4>
                         <a href="https://syed-sahill.github.io/Stop-watch/">
                             https://syed-sahill.github.io/Stop-watch/</a>
                         </div>
@@ -141,13 +144,13 @@
 
                     <div class="section-link-right">
                         <div class="link1">
-                        <h4>Project : 2</h4>
+                        <h4>Project : Todo List</h4>
                         <a href="https://syed-sahill.github.io/Todo-List/">
                             https://syed-sahill.github.io/Todo-List/</a>
                         </div>
 
                         <div class="link1">
-                        <h4>Project : 4</h4>
+                        <h4>Project : Digital Watch</h4>
                         <a href=" https://syed-sahill.github.io/Digital-watch/"> 
                             https://syed-sahill.github.io/Digital-watch/</a>
                         </div>
@@ -163,12 +166,12 @@
                 </div>
 
                 <div class="contact">
-                <form action="https://formspree.io/f/mrbkadbg" method="POST">
+                <form action="https://formspree.io/f/mrbkadbg" method="POST" id="contact-form" >
                     <input class="input" type="text" name="name" placeholder="Your Name" required>
                     <input class="input" type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <textarea name="message" placeholder="Your Message" required class="textarea"></textarea>
                     <div class="button-head">
-                    <button id="submit" type="submit">Submit</button>
+                    <button id="submit" type="submit" aria-label="Submit Button">Submit</button>
                     </div>
                 </form>
 
@@ -185,8 +188,18 @@
         </footer>
 
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
+  <script defer>
     AOS.init();
+
+
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", function () {
+    setTimeout(() => {
+      form.reset(); 
+    }, 100);
+    });
+
   </script>
     </body>
 </html>
